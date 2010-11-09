@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><templates><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script" deleted="false" description="Creates init with [PostConstruct]" enabled="true" name="postConstruct">// ------- Initialization -------
+
+[PostConstruct]
+public function init():void
+{
+	${cursor}
+}</template></templates>

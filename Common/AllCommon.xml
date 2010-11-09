@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><templates><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script_type_members" deleted="false" description="Body of AS3 Event subclass" enabled="true" name="eventBody">// ------- Event type constants -------
+		
+public static const ${type_const}:String = "${type_const_value}";
+
+
+// ------- Constructor -------
+
+public function ${enclosing_type}(type:String, ${cursor}bubbles:Boolean = false, cancelable:Boolean = false)
+{
+	super(type, bubbles, cancelable);
+}
+
+
+// ------- Event overrides -------
+
+override public function clone():Event
+{
+	return new ${enclosing_type}(type, bubbles, cancelable);
+}
+
+		
+override public function toString():String
+{
+	return formatToString("${enclosing_type}", "type", "bubbles", "cancelable", "eventPhase");
+}</template><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script_type_members" deleted="false" description="Function" enabled="true" name="function">${specifier:values(private, public, protected, internal)} function ${name}(${args}):${void}
+{
+	${cursor}
+}</template><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script_type_members" deleted="false" description="Complete property including backer variable, getter, and setter" enabled="true" name="property">private var _${name}:${Type};
+public function get ${name}():${Type} { return _${name}; }
+public function set ${name}(${value}:${Type}):void
+{
+	if (_${name} == ${value})
+		return;
+	_${name} = value;${cursor}
+}</template><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script" deleted="false" description="Section header" enabled="true" name="sectionHeader">// ------- ${SectionName} -------</template></templates>

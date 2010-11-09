@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><templates><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script_statement" deleted="false" description="Creates a try/catch block" enabled="true" id="com.adobe.flexide.as.core.codetemplates.tryCatch" name="tryCatch">try&#13;
+{&#13;
+	${line_selection}&#13;
+	${cursor}&#13;
+} &#13;
+catch(${error}:${Error}) &#13;
+{&#13;
+	// ${todo}: handle exception&#13;
+}</template></templates>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><templates><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script_package" deleted="false" description="Creates a class" enabled="true" id="com.adobe.flexide.as.core.codetemplates.class" name="class">/**&#13;
+ * @author ${user}&#13;
+ */&#13;
+class ${enclosing_type}&#13;
+{&#13;
+	//TODO class body&#13;
+	${cursor}&#13;
+}</template><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script_type_members" deleted="false" description="Robotlegs AS3 command class body" enabled="true" name="commandBody">// ------- Command overrides -------
+
+override public function execute():void
+{
+	${cursor}
+}</template><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script_type_members" deleted="false" description="Creates Constructor for a class" enabled="true" id="com.adobe.flexide.as.core.codetemplates.constructor" name="constructor">public function ${enclosing_type}() &#13;
+{&#13;
+	${cursor}&#13;
+}</template><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script_statement" deleted="false" description="do-while loop" enabled="true" id="com.adobe.flexide.as.core.codetemplates.do" name="do">do &#13;
+{&#13;
+	${line_selection}&#13;
+	${cursor}&#13;
+} while (${condition:local_var(Boolean)});</template><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script_type_members" deleted="false" description="Body of AS3 Event subclass" enabled="true" name="eventBody">// ------- Event type constants -------
+		
+public static const ${type_const}:String = "${type_const_value}";
+
+
+// ------- Constructor -------
+
+public function ${enclosing_type}(type:String, ${cursor}bubbles:Boolean = false, cancelable:Boolean = false)
+{
+	super(type, bubbles, cancelable);
+}
+
+
+// ------- Event overrides -------
+
+override public function clone():Event
+{
+	return new ${enclosing_type}(type, bubbles, cancelable);
+}
+
+		
+override public function toString():String
+{
+	return formatToString("${enclosing_type}", "type", "bubbles", "cancelable", "eventPhase");
+}</template><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script_statement" deleted="false" description="Iterator over value of an array using enumeration" enabled="true" id="com.adobe.flexide.as.core.codetemplates.fore" name="fore">for each (var ${index}:${type} in ${array})&#13;
+{&#13;
+	${line_selection}&#13;
+	${cursor}&#13;
+}</template><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script_statement" deleted="false" description="Iterate over an array" enabled="true" id="com.adobe.flexide.as.core.codetemplates.fori" name="fori">for (var ${index}:int = 0; ${index} &lt; ${array}.length; ${index}++) &#13;
+{&#13;
+	${cursor}&#13;
+}</template><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script_type_members" deleted="false" description="Function" enabled="true" name="function">${specifier:values(private, public, protected, internal)} function ${name}(${args}):${void}
+{
+	${cursor}
+}</template><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script_type_members" deleted="false" description="Creates a getter function" enabled="true" id="com.adobe.flexide.as.core.codetemplates.getter" name="getter">${specifier:values(public, private, protected)} function get ${property}():${Type:values(String,Number)} &#13;
+{&#13;
+	${cursor}&#13;
+	return ${null};&#13;
+}</template><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script_statement" deleted="false" description="If statement" enabled="true" id="com.adobe.flexide.as.core.codetemplates.if" name="if">if (${condition:local_var(Boolean)}) &#13;
+{&#13;
+	${cursor}&#13;
+}</template><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script_type_members" deleted="false" description="Inject metadata for Robotlegs AS3" enabled="true" name="inject">[Inject]
+public var ${name}:${type};</template><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script" deleted="false" description="Creates commandMap event mapping for Robotlegs AS3" enabled="true" name="mapCommand">commandMap.mapEvent(${EventClass}.${type}, ${CommandClass}, ${EventClass});</template><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script" deleted="false" description="Adds context listener for Robotlegs AS3" enabled="true" name="mapContextListener">addContextListener(${EventClass}.${type}, ${handler}, ${EventClass});</template><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script" deleted="false" description="Creates eventMap mapping for Robotlegs AS3" enabled="true" name="mapListener">eventMap.mapListener(${specifier:values(eventDispatcher, view)}, ${EventClass}.${type}, ${handler}, ${EventClass});</template><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script" deleted="false" description="Maps a Robotlegs view listener" enabled="true" name="mapViewListener">addViewListener(${EventClass}.${type}, ${handler}, ${EventClass});</template><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script" deleted="false" description="Robotlegs Mediator subclass body" enabled="true" name="mediatorBody">// ------- Injections -------
+
+[Inject]
+public var view:${viewClass};
+
+
+// ------- Mediator overrides -------
+
+override public function onRegister():void
+{
+	${cursor}
+}</template><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script" deleted="false" description="Creates a package" enabled="true" id="com.adobe.flexide.as.core.codetemplates.package" name="package">package ${enclosing_package}&#13;
+{&#13;
+	/**&#13;
+ 	 * @author ${user}&#13;
+ 	 */&#13;
+	class ${enclosing_type}&#13;
+	{&#13;
+		${cursor}&#13;
+	}	&#13;
+}</template><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script" deleted="false" description="Creates init with [PostConstruct]" enabled="true" name="postConstruct">// ------- Initialization -------
+
+[PostConstruct]
+public function init():void
+{
+	${cursor}
+}</template><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script_type_members" deleted="false" description="Complete property including backer variable, getter, and setter" enabled="true" name="property">private var _${name}:${Type};
+public function get ${name}():${Type} { return _${name}; }
+public function set ${name}(${value}:${Type}):void
+{
+	if (_${name} == ${value})
+		return;
+	_${name} = value;${cursor}
+}</template><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script" deleted="false" description="Section header" enabled="true" name="sectionHeader">// ------- ${SectionName} -------</template><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script_type_members" deleted="false" description="Creates a setter function" enabled="true" id="com.adobe.flexide.as.core.codetemplates.setter" name="setter">${specifier:values(public, protected, private)} function set ${property}(${value}:${Type:values(String,Number,Boolean)}):void &#13;
+{&#13;
+	${cursor}&#13;
+}</template><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script_type_members" deleted="false" description="Adds a new Signal property" enabled="true" name="signal">private var _${signalName}:Signal;
+public function get ${signalName}():Signal
+{
+	return _${signalName} ||= new Signal(${cursor});
+}</template><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script_statement" deleted="false" description="Creates a switch block" enabled="true" id="com.adobe.flexide.as.core.codetemplates.switch" name="switch">switch(${expression})&#13;
+{&#13;
+	case ${result}:&#13;
+		${cursor}&#13;
+		break;&#13;
+	default:&#13;
+		break;&#13;
+}</template><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script_type_members" deleted="false" description="Creates a toString function" enabled="true" id="com.adobe.flexide.as.core.codetemplates.toString" name="toString">override public function toString():String&#13;
+{&#13;
+	return "${enclosing_package_and_type}";&#13;
+}</template><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script_statement" deleted="false" description="trace current method" enabled="true" id="com.adobe.flexide.as.core.codetemplates.traceMethod" name="traceMethod">trace("${enclosing_type}.${enclosing_method}(${enclosing_method_arguments})");</template><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script_statement" deleted="false" description="Creates a try/catch block" enabled="true" id="com.adobe.flexide.as.core.codetemplates.tryCatch" name="tryCatch">try&#13;
+{&#13;
+	${line_selection}&#13;
+	${cursor}&#13;
+} &#13;
+catch(${error}:${Error}) &#13;
+{&#13;
+	// ${todo}: handle exception&#13;
+}</template><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script" deleted="false" description="Adds commandMap unmapping" enabled="true" name="unmapCommand">commandMap.unmapEvent(${EventClass}.${type}, ${CommandClass}, ${EventClass});</template><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script" deleted="false" description="Unmap a listener for Robotlegs AS3" enabled="true" name="unmapListener">eventMap.unmapListener(${specifier:value(eventDispatcher, view)}, ${EventClass}.${type}, ${handler}, ${EventClass});</template><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script_statement" deleted="false" description="Creates local Vector instance with type" enabled="true" id="com.adobe.flexide.as.core.codetemplates.vector" name="vector">var ${name}:Vector.&lt;${type}&gt; = new Vector.&lt;${type}&gt;();</template></templates>

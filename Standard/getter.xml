@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><templates><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script_type_members" deleted="false" description="Creates a getter function" enabled="true" id="com.adobe.flexide.as.core.codetemplates.getter" name="getter">${specifier:values(public, private, protected)} function get ${property}():${Type:values(String,Number)} &#13;
+{&#13;
+	${cursor}&#13;
+	return ${null};&#13;
+}</template></templates>
