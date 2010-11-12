@@ -15,9 +15,8 @@ override public function execute():void
 	${cursor}&#13;
 }</template><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script_statement" deleted="false" description="do-while loop" enabled="true" id="com.adobe.flexide.as.core.codetemplates.do" name="do">do &#13;
 {&#13;
-	${line_selection}&#13;
-	${cursor}&#13;
-} while (${condition:local_var(Boolean)});</template><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script_type_members" deleted="false" description="Body of AS3 Event subclass" enabled="true" name="eventBody">// ------- Event type constants -------
+	${line_selection}${cursor}&#13;
+} while (${condition:local_var(Boolean)});</template><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script" deleted="false" description="Adds Event Metadata" enabled="false" name="Event">[Event(name="${eventName}", type="${event:values(flash.events.Event)}")]</template><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script_type_members" deleted="false" description="Body of AS3 Event subclass" enabled="true" name="eventBody">// ------- Event type constants -------
 		
 public static const ${type_const}:String = "${type_const_value}";
 
@@ -43,11 +42,10 @@ override public function toString():String
 	return formatToString("${enclosing_type}", "type", "bubbles", "cancelable", "eventPhase");
 }</template><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script_statement" deleted="false" description="Iterator over value of an array using enumeration" enabled="true" id="com.adobe.flexide.as.core.codetemplates.fore" name="fore">for each (var ${index}:${type} in ${array})&#13;
 {&#13;
-	${line_selection}&#13;
-	${cursor}&#13;
-}</template><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script_statement" deleted="false" description="Iterate over an array" enabled="true" id="com.adobe.flexide.as.core.codetemplates.fori" name="fori">for (var ${index}:int = 0; ${index} &lt; ${array}.length; ${index}++) &#13;
+	${line_selection}${cursor}&#13;
+}</template><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script_statement" deleted="false" description="Iterate over an array" enabled="true" id="com.adobe.flexide.as.core.codetemplates.fori" name="fori">for (var ${index}:int = 0, len:int = ${array}.length; ${index} &lt; len; ${index}++) &#13;
 {&#13;
-	${cursor}&#13;
+	${line_selection}${cursor}&#13;
 }</template><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script_type_members" deleted="false" description="Function" enabled="true" name="function">${specifier:values(private, public, protected, internal)} function ${name}(${args}):${void}
 {
 	${cursor}
@@ -57,7 +55,7 @@ override public function toString():String
 	return ${null};&#13;
 }</template><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script_statement" deleted="false" description="If statement" enabled="true" id="com.adobe.flexide.as.core.codetemplates.if" name="if">if (${condition:local_var(Boolean)}) &#13;
 {&#13;
-	${cursor}&#13;
+	${line_selection}${cursor}&#13;
 }</template><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script_type_members" deleted="false" description="Inject metadata for Robotlegs AS3" enabled="true" name="inject">[Inject]
 public var ${name}:${type};</template><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script" deleted="false" description="Creates commandMap event mapping for Robotlegs AS3" enabled="true" name="mapCommand">commandMap.mapEvent(${EventClass}.${type}, ${CommandClass}, ${EventClass});</template><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script" deleted="false" description="Adds context listener for Robotlegs AS3" enabled="true" name="mapContextListener">addContextListener(${EventClass}.${type}, ${handler}, ${EventClass});</template><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script" deleted="false" description="Creates eventMap mapping for Robotlegs AS3" enabled="true" name="mapListener">eventMap.mapListener(${specifier:values(eventDispatcher, view)}, ${EventClass}.${type}, ${handler}, ${EventClass});</template><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script" deleted="false" description="Maps a Robotlegs view listener" enabled="true" name="mapViewListener">addViewListener(${EventClass}.${type}, ${handler}, ${EventClass});</template><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script" deleted="false" description="Robotlegs Mediator subclass body" enabled="true" name="mediatorBody">// ------- Injections -------
 
@@ -102,12 +100,16 @@ public function get ${signalName}():Signal
 }</template><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script_statement" deleted="false" description="Creates a switch block" enabled="true" id="com.adobe.flexide.as.core.codetemplates.switch" name="switch">switch(${expression})&#13;
 {&#13;
 	case ${result}:&#13;
+	{&#13;
 		${cursor}&#13;
 		break;&#13;
+	}&#13;
+	&#13;
 	default:&#13;
+	{&#13;
 		break;&#13;
-}</template><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script_type_members" deleted="false" description="Creates a toString function" enabled="true" id="com.adobe.flexide.as.core.codetemplates.toString" name="toString">override public function toString():String&#13;
-{&#13;
+	}&#13;
+}</template><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script_type_members" deleted="false" description="Creates a toString function" enabled="true" id="com.adobe.flexide.as.core.codetemplates.toString" name="toString">override public function toString() : String {&#13;
 	return "${enclosing_package_and_type}";&#13;
 }</template><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script_statement" deleted="false" description="trace current method" enabled="true" id="com.adobe.flexide.as.core.codetemplates.traceMethod" name="traceMethod">trace("${enclosing_type}.${enclosing_method}(${enclosing_method_arguments})");</template><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script_statement" deleted="false" description="Creates a try/catch block" enabled="true" id="com.adobe.flexide.as.core.codetemplates.tryCatch" name="tryCatch">try&#13;
 {&#13;
