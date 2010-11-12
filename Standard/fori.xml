@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><templates><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script_statement" deleted="false" description="Iterate over an array" enabled="true" id="com.adobe.flexide.as.core.codetemplates.fori" name="fori">for (var ${index}:int = 0; ${index} &lt; ${array}.length; ${index}++) &#13;
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><templates><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script_statement" deleted="false" description="Iterate over an array" enabled="true" id="com.adobe.flexide.as.core.codetemplates.fori" name="fori">for (var ${index}:int = 0, len:int = ${array}.length; ${index} &lt; len; ${index}++) &#13;
 {&#13;
-	${cursor}&#13;
+	${line_selection}${cursor}&#13;
 }</template></templates>

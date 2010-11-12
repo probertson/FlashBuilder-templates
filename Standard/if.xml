@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><templates><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script_statement" deleted="false" description="If statement" enabled="true" id="com.adobe.flexide.as.core.codetemplates.if" name="if">if (${condition:local_var(Boolean)}) &#13;
 {&#13;
-	${cursor}&#13;
+	${line_selection}${cursor}&#13;
 }</template></templates>
