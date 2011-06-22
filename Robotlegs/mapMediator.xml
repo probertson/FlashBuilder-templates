@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><templates><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script" deleted="false" description="Map a Robotlegs mediator to its associated view class" enabled="true" name="mapMediator">mediatorMap.mapView(${ViewClass}, ${MediatorClass});</template></templates>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><templates><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script_type_members" deleted="false" description="FlexUnit asynchronous test case method" enabled="true" name="testAsyncWithCallback">[Test(async, timeout="500")]
+public function test_${testName}():void
+{
+	addEventListener(TestResultEvent.RESULT, Async.asyncHandler(this, test_${testName}_result2, 500));
+	${addListener}(test_${testName}_result);
+	${cursor}
+}
+
+private function test_${testName}_result(${arguments}):void
+{
+	dispatchEvent(new TestResultEvent(TestResultEvent.RESULT));
+}
+
+private function test_${testName}_result2(event:TestResultEvent, passThroughData:Object):void
+{
+	Assert.assertTrue(false);
+}</template><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script_type_members" deleted="false" description="FlexUnit test method for an asynchronous test with a callback, when the event shouldn't be triggered" enabled="true" name="testAsyncWithCallbackDontCall">[Test(async, timeout="1000")]
+public function test_${testName}():void
+{
+	addEventListener(TestResultEvent.RESULT, Async.asyncHandler(this, test_${testName}_result2, 1000));
+	
+	_delay = new Timer(750);
+	_delay.addEventListener(TimerEvent.TIMER, test_${testName}_timerResult);
+	_delay.start();
+	${addListener}(test_${testName}_fault);
+	${cursor}
+}
+
+var _delay:Timer;
+
+private function test_${testName}_fault():void
+{
+	_delay.stop();
+	_delay.removeEventListener(TimerEvent.TIMER, test_${testName}_timerResult);
+	Assert.fail("Callback called that shouldn't have been: test_${testName}");
+}
+
+protected function test_${testName}_timerResult(event:TimerEvent):void
+{
+	dispatchEvent(new TestResultEvent(TestResultEvent.RESULT));
+}
+
+private function test_${testName}_result2(event:TestResultEvent, passThroughData:Object):void
+{
+	Assert.assertTrue(false);
+}</template><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script" deleted="false" description="Starting body code for FlexUnit test case class" enabled="true" name="testBody">package ${enclosing_package}
+{
+
+	public class ${enclosing_type}
+	{
+		// ------- Instance to test -------
+		
+		private var _instance:${class_to_test};
+		
+		
+		// ------- Setup/Teardown -------
+		
+		[Before]
+		public function setUp():void
+		{
+			_instance = new ${class_to_test}();
+		}
+		
+		
+		[After]
+		public function tearDown():void
+		{
+			_instance = null;
+		}
+		
+		
+		[BeforeClass]
+		public static function setUpBeforeClass():void
+		{
+		}
+		
+		
+		[AfterClass]
+		public static function tearDownAfterClass():void
+		{
+		}
+		
+		
+		// ------- Test methods -------
+		
+		${cursor}
+	}
+}</template><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script_type_members" deleted="false" description="FlexUnit test method" enabled="true" name="testMethod">[Test]
+public function test_${test_name}():void
+{
+	${cursor}
+}</template></templates>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><templates><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script" deleted="false" description="Robotlegs Context class body" enabled="true" name="contextBody">// ------- Constructor -------
+
+public function ${enclosing_type}(contextView:DisplayObjectContainer=null, autoStartup:Boolean=true)
+{
+	super(contextView, autoStartup);
+}
+		
+		
+// ------- Context overrides -------
+
+override public function startup():void
+{
+	commandMap.mapEvent(ContextEvent.STARTUP, ConfigureModelsCommand, ContextEvent, true);
+	commandMap.mapEvent(ContextEvent.STARTUP, ConfigureControllersCommand, ContextEvent, true);
+	commandMap.mapEvent(ContextEvent.STARTUP, ConfigureServicesCommand, ContextEvent, true);
+	commandMap.mapEvent(ContextEvent.STARTUP, ConfigureViewsCommand, ContextEvent, true);
+	${cursor}
+	dispatchEvent(new ContextEvent(ContextEvent.STARTUP));
+}</template></templates>

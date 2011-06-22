@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><templates><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script_type_members" deleted="false" description="Body of AS3 Event subclass" enabled="true" name="eventBody">// ------- Event type constants -------
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><templates><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script_type_members" deleted="false" description="Creates the body of an AS3 Event subclass" enabled="true" name="eventBody">// ------- Event type constants -------
 		
 public static const ${type_const}:String = "${type_const_value}";
 

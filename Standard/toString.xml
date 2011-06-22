@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><templates><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script_type_members" deleted="false" description="Creates a toString function" enabled="true" id="com.adobe.flexide.as.core.codetemplates.toString" name="toString">override public function toString():String&#13;
-{&#13;
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><templates><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script_type_members" deleted="false" description="Creates a toString function" enabled="true" id="com.adobe.flexide.as.core.codetemplates.toString" name="toString">override public function toString() : String {&#13;
 	return "${enclosing_package_and_type}";&#13;
 }</template></templates>

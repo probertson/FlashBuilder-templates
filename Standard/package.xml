@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><templates><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script" deleted="false" description="Creates a package" enabled="true" id="com.adobe.flexide.as.core.codetemplates.package" name="package">package ${enclosing_package}&#13;
 {&#13;
-	/**&#13;
- 	 * @author ${user}&#13;
- 	 */&#13;
 	class ${enclosing_type}&#13;
 	{&#13;
 		${cursor}&#13;

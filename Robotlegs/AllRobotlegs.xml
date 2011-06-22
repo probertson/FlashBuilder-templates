@@ -1,10 +1,29 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><templates><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script_type_members" deleted="false" description="Robotlegs AS3 command class body" enabled="true" name="commandBody">// ------- Command overrides -------
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><templates><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script_type_members" deleted="false" description="Robotlegs AS3 command class body" enabled="true" name="commandBody">[Inject]
+public var ${name}:${type};
 
 override public function execute():void
 {
 	${cursor}
+}</template><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script" deleted="false" description="Robotlegs Context class body" enabled="true" name="contextBody">// ------- Constructor -------
+
+public function ${enclosing_type}(contextView:DisplayObjectContainer=null, autoStartup:Boolean=true)
+{
+	super(contextView, autoStartup);
+}
+		
+		
+// ------- Context overrides -------
+
+override public function startup():void
+{
+	commandMap.mapEvent(ContextEvent.STARTUP, ConfigureModelsCommand, ContextEvent, true);
+	commandMap.mapEvent(ContextEvent.STARTUP, ConfigureControllersCommand, ContextEvent, true);
+	commandMap.mapEvent(ContextEvent.STARTUP, ConfigureServicesCommand, ContextEvent, true);
+	commandMap.mapEvent(ContextEvent.STARTUP, ConfigureViewsCommand, ContextEvent, true);
+	${cursor}
+	dispatchEvent(new ContextEvent(ContextEvent.STARTUP));
 }</template><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script_type_members" deleted="false" description="Inject metadata for Robotlegs AS3" enabled="true" name="inject">[Inject]
-public var ${name}:${type};</template><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script" deleted="false" description="Creates commandMap event mapping for Robotlegs AS3" enabled="true" name="mapCommand">commandMap.mapEvent(${EventClass}.${type}, ${CommandClass}, ${EventClass});</template><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script" deleted="false" description="Adds context listener for Robotlegs AS3" enabled="true" name="mapContextListener">addContextListener(${EventClass}.${type}, ${handler}, ${EventClass});</template><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script" deleted="false" description="Creates eventMap mapping for Robotlegs AS3" enabled="true" name="mapListener">eventMap.mapListener(${specifier:values(eventDispatcher, view)}, ${EventClass}.${type}, ${handler}, ${EventClass});</template><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script" deleted="false" description="Maps a Robotlegs view listener" enabled="true" name="mapViewListener">addViewListener(${EventClass}.${type}, ${handler}, ${EventClass});</template><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script" deleted="false" description="Robotlegs Mediator subclass body" enabled="true" name="mediatorBody">// ------- Injections -------
+public var ${name}:${type};</template><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script" deleted="false" description="Creates commandMap event mapping for Robotlegs AS3" enabled="true" name="mapCommand">commandMap.mapEvent(${EventClass}.${type}, ${CommandClass}, ${EventClass});</template><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script" deleted="false" description="Adds context listener for Robotlegs AS3" enabled="true" name="mapContextListener">addContextListener(${EventClass}.${type}, ${handler}, ${EventClass});</template><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script" deleted="false" description="Creates eventMap mapping for Robotlegs AS3" enabled="true" name="mapListener">eventMap.mapListener(${specifier:values(eventDispatcher, view)}, ${EventClass}.${type}, ${handler}, ${EventClass});</template><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script" deleted="false" description="Map a Robotlegs mediator to its associated view class" enabled="true" name="mapMediator">mediatorMap.mapView(${ViewClass}, ${MediatorClass});</template><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script" deleted="false" description="Maps a Robotlegs view listener" enabled="true" name="mapViewListener">addViewListener(${EventClass}.${type}, ${handler}, ${EventClass});</template><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script" deleted="false" description="Robotlegs Mediator subclass body" enabled="true" name="mediatorBody">// ------- Injections -------
 
 [Inject]
 public var view:${viewClass};

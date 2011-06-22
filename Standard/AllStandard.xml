@@ -1,7 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><templates><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script_package" deleted="false" description="Creates a class" enabled="true" id="com.adobe.flexide.as.core.codetemplates.class" name="class">/**&#13;
- * @author ${user}&#13;
- */&#13;
-class ${enclosing_type}&#13;
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><templates><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script_package" deleted="false" description="Creates a class" enabled="true" id="com.adobe.flexide.as.core.codetemplates.class" name="class">class ${enclosing_type}&#13;
 {&#13;
 	//TODO class body&#13;
 	${cursor}&#13;
@@ -11,12 +8,39 @@ class ${enclosing_type}&#13;
 }</template><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script_statement" deleted="false" description="do-while loop" enabled="true" id="com.adobe.flexide.as.core.codetemplates.do" name="do">do &#13;
 {&#13;
 	${line_selection}${cursor}&#13;
-} while (${condition:local_var(Boolean)});</template><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script_statement" deleted="false" description="Iterator over value of an array using enumeration" enabled="true" id="com.adobe.flexide.as.core.codetemplates.fore" name="fore">for each (var ${index}:${type} in ${array})&#13;
+} while (${condition:local_var(Boolean)});</template><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script_type_members" deleted="false" description="Creates the body of an AS3 Event subclass" enabled="true" name="eventBody">// ------- Event type constants -------
+		
+public static const ${type_const}:String = "${type_const_value}";
+
+
+// ------- Constructor -------
+
+public function ${enclosing_type}(type:String, ${cursor}bubbles:Boolean = false, cancelable:Boolean = false)
+{
+	super(type, bubbles, cancelable);
+}
+
+
+// ------- Event overrides -------
+
+override public function clone():Event
+{
+	return new ${enclosing_type}(type, bubbles, cancelable);
+}
+
+		
+override public function toString():String
+{
+	return formatToString("${enclosing_type}", "type", "bubbles", "cancelable", "eventPhase");
+}</template><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script_statement" deleted="false" description="Iterator over value of an array using enumeration" enabled="true" id="com.adobe.flexide.as.core.codetemplates.fore" name="fore">for each (var ${index}:${type} in ${array})&#13;
 {&#13;
 	${line_selection}${cursor}&#13;
-}</template><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script_statement" deleted="false" description="Iterate over an array" enabled="true" id="com.adobe.flexide.as.core.codetemplates.fori" name="fori">for (var ${index}:int = 0, len:int = ${array}.length; ${index} &lt; len; ${index}++) &#13;
+}</template><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script_statement" deleted="false" description="Iterate over an array" enabled="true" id="com.adobe.flexide.as.core.codetemplates.fori" name="fori">for (var ${index}:int = 0, len:int = ${array}.length; ${index} &lt; len; ${index}++)&#13;
 {&#13;
 	${line_selection}${cursor}&#13;
+}</template><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script" deleted="false" description="Creates a function" enabled="true" id="com.adobe.flexide.as.core.codetemplates.function" name="function">${specifier:values(private, public, protected)} function ${fname}():${type:values(void,String,Number,Boolean,Object)}
+{
+	${line_selection}${cursor}
 }</template><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script_type_members" deleted="false" description="Creates a getter function" enabled="true" id="com.adobe.flexide.as.core.codetemplates.getter" name="getter">${specifier:values(public, private, protected)} function get ${property}():${Type:values(String,Number)} &#13;
 {&#13;
 	${cursor}&#13;
@@ -26,28 +50,28 @@ class ${enclosing_type}&#13;
 	${line_selection}${cursor}&#13;
 }</template><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script" deleted="false" description="Creates a package" enabled="true" id="com.adobe.flexide.as.core.codetemplates.package" name="package">package ${enclosing_package}&#13;
 {&#13;
-	/**&#13;
- 	 * @author ${user}&#13;
- 	 */&#13;
 	class ${enclosing_type}&#13;
 	{&#13;
 		${cursor}&#13;
 	}	&#13;
+}</template><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script_type_members" deleted="false" description="Creates a property including variable definition, getter and setter methods" enabled="true" id="com.adobe.flexide.as.core.codetemplates.property" name="property">private var _${name}:${Type};
+public function get ${name}():${Type} { return _${name}; }
+public function set ${name}(${value}:${Type}):void
+{
+	if (_${name} == ${value})
+		return;
+	_${name} = value;${cursor}
 }</template><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script_type_members" deleted="false" description="Creates a setter function" enabled="true" id="com.adobe.flexide.as.core.codetemplates.setter" name="setter">${specifier:values(public, protected, private)} function set ${property}(${value}:${Type:values(String,Number,Boolean)}):void &#13;
 {&#13;
 	${cursor}&#13;
-}</template><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script_statement" deleted="false" description="Creates a switch block" enabled="true" id="com.adobe.flexide.as.core.codetemplates.switch" name="switch">switch(${expression})&#13;
+}</template><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script_statement" deleted="false" description="Creates a switch block" enabled="true" id="com.adobe.flexide.as.core.codetemplates.switch" name="switch">switch (${expression})&#13;
 {&#13;
 	case ${result}:&#13;
-	{&#13;
 		${cursor}&#13;
 		break;&#13;
-	}&#13;
 	&#13;
 	default:&#13;
-	{&#13;
 		break;&#13;
-	}&#13;
 }</template><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script_type_members" deleted="false" description="Creates a toString function" enabled="true" id="com.adobe.flexide.as.core.codetemplates.toString" name="toString">override public function toString() : String {&#13;
 	return "${enclosing_package_and_type}";&#13;
 }</template><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script_statement" deleted="false" description="trace current method" enabled="true" id="com.adobe.flexide.as.core.codetemplates.traceMethod" name="traceMethod">trace("${enclosing_type}.${enclosing_method}(${enclosing_method_arguments})");</template><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script_statement" deleted="false" description="Creates a try/catch block" enabled="true" id="com.adobe.flexide.as.core.codetemplates.tryCatch" name="tryCatch">try&#13;

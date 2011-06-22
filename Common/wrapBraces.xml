@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><templates><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script" deleted="false" description="Wrap a block of code in curly braces and indent it" enabled="true" name="wrapBraces">{
+	${line_selection}
+}</template></templates>

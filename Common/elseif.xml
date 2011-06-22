@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><templates><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script_statement" deleted="false" description="Creates an if else if code block" enabled="true" id="com.adobe.flexide.as.core.codetemplates.ifElseIf" name="elseif">else if (${condition:local_var(Boolean)}) 
+{
+	${cursor}
+}</template></templates>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><templates><template autoinsert="true" context="com.adobe.flexide.as.core.codetemplates.action_script" deleted="false" description="Starting body code for FlexUnit test case class" enabled="true" name="testBody">package ${enclosing_package}
+{
+
+	public class ${enclosing_type}
+	{
+		// ------- Instance to test -------
+		
+		private var _instance:${class_to_test};
+		
+		
+		// ------- Setup/Teardown -------
+		
+		[Before]
+		public function setUp():void
+		{
+			_instance = new ${class_to_test}();
+		}
+		
+		
+		[After]
+		public function tearDown():void
+		{
+			_instance = null;
+		}
+		
+		
+		[BeforeClass]
+		public static function setUpBeforeClass():void
+		{
+		}
+		
+		
+		[AfterClass]
+		public static function tearDownAfterClass():void
+		{
+		}
+		
+		
+		// ------- Test methods -------
+		
+		${cursor}
+	}
+}</template></templates>
