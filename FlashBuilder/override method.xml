@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><templates><template autoinsert="false" context="com.adobe.flexide.as.core.codetemplates.generated.action_script_function" deleted="false" description="Code generated in override methods" enabled="true" id="com.adobe.flexide.as.core.codetemplates.generated.override" name="override method">${namespace} ${modifiers}function ${method_name}(${params})${return_type}&#13;
+{&#13;
+    ${body_statement}&#13;
+}</template></templates>
